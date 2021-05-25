@@ -1,6 +1,6 @@
 //import { continueStatement } from "babel-types";
 
-export function tabs(headerSElector, tabSelector, contentSelector, activeClass) {
+export function tabs(headerSElector, tabSelector, contentSelector, activeClass, display = 'block') {
     const header = document.querySelector(headerSElector),
           tab = document.querySelectorAll(tabSelector),
           content = document.querySelectorAll(contentSelector);
@@ -17,7 +17,7 @@ export function tabs(headerSElector, tabSelector, contentSelector, activeClass) 
     }
     
     function showTabContent(i = 0) {
-        content[i].style.display = 'block';
+        content[i].style.display = display;
         tab[i].classList.add(activeClass);
     }
 
